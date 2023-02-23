@@ -41,26 +41,23 @@ module.exports = {
         "maintain/polygon-basics/who-is-delegator",
         "maintain/polygon-basics/who-is-validator",
         "home/architecture/polygon-architecture",
-        "home/polygon-basics/zkEVM-basics"
+        "home/polygon-basics/zkEVM-basics",
       ],
     },
     "home/faq",
   ],
 
-  delegate: ["maintain/delegate/delegate",
-  //"maintain/delegate/delegator-faq"
+  delegate: [
+    "maintain/delegate/delegate",
+    //"maintain/delegate/delegator-faq"
   ],
 
-  govern: [
-    "maintain/govern/pips",
-    "maintain/govern/governance-pos",
-  ],
+  govern: ["maintain/govern/pips", "maintain/govern/governance-pos"],
 
   operate: [
-      "operate/technical-requirements",
-      "avail/node/avail-node-management",
-      "miden/intro/usage",
-
+    "operate/technical-requirements",
+    "avail/node/avail-node-management",
+    "miden/intro/usage",
   ],
 
   operatepos: [
@@ -84,7 +81,7 @@ module.exports = {
         "operate/erigon/archive-node-binaries",
       ],
     },
-],
+  ],
 
   develop: [
     "develop/getting-started",
@@ -105,7 +102,7 @@ module.exports = {
           },
           items: [
             "develop/wallets/polygon-web-wallet/web-wallet-v3-guide",
-            "faq/adding-a-custom-token"
+            "faq/adding-a-custom-token",
           ],
         },
         {
@@ -148,7 +145,7 @@ module.exports = {
                 "develop/wallets/venly/intro",
                 "develop/wallets/venly/create-wallet",
                 "develop/wallets/venly/network",
-                "develop/wallets/venly/custom-tokens"
+                "develop/wallets/venly/custom-tokens",
               ],
             },
             "develop/wallets/fortmatic",
@@ -158,7 +155,7 @@ module.exports = {
             "develop/wallets/slashauth",
             "develop/wallets/plaid-wallet-onboard",
           ],
-        }
+        },
       ],
     },
     {
@@ -175,10 +172,7 @@ module.exports = {
           link: {
             type: "generated-index",
           },
-          items: [
-            "operate/gas-token",
-            "operate/mapped-tokens",
-          ],
+          items: ["operate/gas-token", "operate/mapped-tokens"],
         },
         {
           type: "category",
@@ -237,11 +231,13 @@ module.exports = {
         "develop/eip1559",
         {
           type: "category",
-          label: "Meta Transactions",
+          label: "Account Abstraction",
           link: {
             type: "generated-index",
           },
           items: [
+            "develop/meta-transactions/account-abstraction",
+            "develop/meta-transactions/eip4337",
             "develop/meta-transactions/meta-transactions",
             "develop/meta-transactions/network-agnostics",
           ],
@@ -376,7 +372,7 @@ module.exports = {
       },
       items: [
         "develop/tools/matic-faucet",
-        "develop/tools/polygon-gas-station"
+        "develop/tools/polygon-gas-station",
       ],
     },
   ],
@@ -465,9 +461,7 @@ module.exports = {
           link: {
             type: "generated-index",
           },
-          items: [
-            "maintain/validate/validator-performance-overview",
-          ],
+          items: ["maintain/validate/validator-performance-overview"],
         },
         "avail/node/avail-node-management",
         {
@@ -485,10 +479,8 @@ module.exports = {
               link: {
                 type: "generated-index",
               },
-              items: [
-                "maintain/validate/kb/additional-info/port-config"
-              ]
-            }
+              items: ["maintain/validate/kb/additional-info/port-config"],
+            },
           ],
         },
         "maintain/reporting-issues",
@@ -517,14 +509,12 @@ module.exports = {
             {
               type: "link",
               label: "Polygon-Mainnet",
-              href:
-                "https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json",
+              href: "https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json",
             },
             {
               type: "link",
               label: "Mumbai",
-              href:
-                "https://static.matic.network/network/testnet/mumbai/index.json",
+              href: "https://static.matic.network/network/testnet/mumbai/index.json",
             },
           ],
         },
@@ -546,122 +536,121 @@ module.exports = {
   ],
 
   maticjs: [
-
-        "develop/ethereum-polygon/matic-js/get-started",
-        "develop/ethereum-polygon/matic-js/api-architecture",
-        "develop/ethereum-polygon/matic-js/installation",
+    "develop/ethereum-polygon/matic-js/get-started",
+    "develop/ethereum-polygon/matic-js/api-architecture",
+    "develop/ethereum-polygon/matic-js/installation",
+    {
+      type: "category",
+      label: "Setup",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "develop/ethereum-polygon/matic-js/setup/index",
+        "develop/ethereum-polygon/matic-js/setup/web3",
+        "develop/ethereum-polygon/matic-js/setup/ethers",
+      ],
+    },
+    {
+      type: "category",
+      label: "PoS Chain",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "develop/ethereum-polygon/matic-js/pos/index",
         {
           type: "category",
-          label: "Setup",
+          label: "ERC20",
           link: {
             type: "generated-index",
           },
           items: [
-            "develop/ethereum-polygon/matic-js/setup/index",
-            "develop/ethereum-polygon/matic-js/setup/web3",
-            "develop/ethereum-polygon/matic-js/setup/ethers",
+            "develop/ethereum-polygon/matic-js/pos/erc20/index",
+            "develop/ethereum-polygon/matic-js/pos/erc20/get-balance",
+            "develop/ethereum-polygon/matic-js/pos/erc20/approve",
+            "develop/ethereum-polygon/matic-js/pos/erc20/approve-max",
+            "develop/ethereum-polygon/matic-js/pos/erc20/get-allowance",
+            "develop/ethereum-polygon/matic-js/pos/erc20/deposit",
+            "develop/ethereum-polygon/matic-js/pos/erc20/transfer",
+            "develop/ethereum-polygon/matic-js/pos/erc20/withdraw-start",
+            "develop/ethereum-polygon/matic-js/pos/erc20/withdraw-exit",
+            "develop/ethereum-polygon/matic-js/pos/erc20/withdraw-exit-faster",
+            "develop/ethereum-polygon/matic-js/pos/erc20/is-withdraw-exited",
           ],
         },
         {
           type: "category",
-          label: "PoS Chain",
+          label: "ERC721",
           link: {
             type: "generated-index",
           },
           items: [
-            "develop/ethereum-polygon/matic-js/pos/index",
-            {
-              type: "category",
-              label: "ERC20",
-              link: {
-                type: "generated-index",
-              },
-              items: [
-                "develop/ethereum-polygon/matic-js/pos/erc20/index",
-                "develop/ethereum-polygon/matic-js/pos/erc20/get-balance",
-                "develop/ethereum-polygon/matic-js/pos/erc20/approve",
-                "develop/ethereum-polygon/matic-js/pos/erc20/approve-max",
-                "develop/ethereum-polygon/matic-js/pos/erc20/get-allowance",
-                "develop/ethereum-polygon/matic-js/pos/erc20/deposit",
-                "develop/ethereum-polygon/matic-js/pos/erc20/transfer",
-                "develop/ethereum-polygon/matic-js/pos/erc20/withdraw-start",
-                "develop/ethereum-polygon/matic-js/pos/erc20/withdraw-exit",
-                "develop/ethereum-polygon/matic-js/pos/erc20/withdraw-exit-faster",
-                "develop/ethereum-polygon/matic-js/pos/erc20/is-withdraw-exited",
-              ],
-            },
-            {
-              type: "category",
-              label: "ERC721",
-              link: {
-                type: "generated-index",
-              },
-              items: [
-                "develop/ethereum-polygon/matic-js/pos/erc721/index",
-                "develop/ethereum-polygon/matic-js/pos/erc721/get-tokens-count",
-                "develop/ethereum-polygon/matic-js/pos/erc721/get-token-id-at-index-for-user",
-                "develop/ethereum-polygon/matic-js/pos/erc721/get-all-tokens",
-                "develop/ethereum-polygon/matic-js/pos/erc721/is-approved",
-                "develop/ethereum-polygon/matic-js/pos/erc721/is-approved-all",
-                "develop/ethereum-polygon/matic-js/pos/erc721/approve",
-                "develop/ethereum-polygon/matic-js/pos/erc721/approve-all",
-                "develop/ethereum-polygon/matic-js/pos/erc721/deposit",
-                "develop/ethereum-polygon/matic-js/pos/erc721/deposit-many",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-start",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-start-many",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit-many",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit-faster",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit-faster-many",
-                "develop/ethereum-polygon/matic-js/pos/erc721/is-withdraw-exited",
-                "develop/ethereum-polygon/matic-js/pos/erc721/is-withdraw-exited-many",
-                "develop/ethereum-polygon/matic-js/pos/erc721/transfer",
-                "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-start-with-meta-data",
-              ],
-            },
-            {
-              type: "category",
-              label: "ERC1155",
-              link: {
-                type: "generated-index",
-              },
-              items: [
-                "develop/ethereum-polygon/matic-js/pos/erc1155/get-balance",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/approve-all",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/approve-all-for-mintable",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/is-approved-all",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/deposit",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/deposit-many",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-start",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-start-many",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit-faster",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit-many",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit-faster-many",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/is-withdraw-exited",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/is-withdraw-exited-many",
-                "develop/ethereum-polygon/matic-js/pos/erc1155/transfer",
-              ],
-            },
-            "develop/ethereum-polygon/matic-js/pos/is-check-pointed",
-            "develop/ethereum-polygon/matic-js/pos/is-deposited",
-            "develop/ethereum-polygon/matic-js/pos/deposit-ether",
+            "develop/ethereum-polygon/matic-js/pos/erc721/index",
+            "develop/ethereum-polygon/matic-js/pos/erc721/get-tokens-count",
+            "develop/ethereum-polygon/matic-js/pos/erc721/get-token-id-at-index-for-user",
+            "develop/ethereum-polygon/matic-js/pos/erc721/get-all-tokens",
+            "develop/ethereum-polygon/matic-js/pos/erc721/is-approved",
+            "develop/ethereum-polygon/matic-js/pos/erc721/is-approved-all",
+            "develop/ethereum-polygon/matic-js/pos/erc721/approve",
+            "develop/ethereum-polygon/matic-js/pos/erc721/approve-all",
+            "develop/ethereum-polygon/matic-js/pos/erc721/deposit",
+            "develop/ethereum-polygon/matic-js/pos/erc721/deposit-many",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-start",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-start-many",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit-many",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit-faster",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-exit-faster-many",
+            "develop/ethereum-polygon/matic-js/pos/erc721/is-withdraw-exited",
+            "develop/ethereum-polygon/matic-js/pos/erc721/is-withdraw-exited-many",
+            "develop/ethereum-polygon/matic-js/pos/erc721/transfer",
+            "develop/ethereum-polygon/matic-js/pos/erc721/withdraw-start-with-meta-data",
           ],
         },
-        "develop/ethereum-polygon/matic-js/fx-portal",
-        "develop/ethereum-polygon/matic-js/set-proof-api",
         {
           type: "category",
-          label: "Advanced",
+          label: "ERC1155",
           link: {
             type: "generated-index",
           },
           items: [
-            "develop/ethereum-polygon/matic-js/advanced/abi-manager",
-            "develop/ethereum-polygon/matic-js/advanced/plugin",
-            "develop/ethereum-polygon/matic-js/advanced/exit-util",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/get-balance",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/approve-all",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/approve-all-for-mintable",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/is-approved-all",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/deposit",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/deposit-many",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-start",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-start-many",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit-faster",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit-many",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/withdraw-exit-faster-many",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/is-withdraw-exited",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/is-withdraw-exited-many",
+            "develop/ethereum-polygon/matic-js/pos/erc1155/transfer",
           ],
         },
+        "develop/ethereum-polygon/matic-js/pos/is-check-pointed",
+        "develop/ethereum-polygon/matic-js/pos/is-deposited",
+        "develop/ethereum-polygon/matic-js/pos/deposit-ether",
+      ],
+    },
+    "develop/ethereum-polygon/matic-js/fx-portal",
+    "develop/ethereum-polygon/matic-js/set-proof-api",
+    {
+      type: "category",
+      label: "Advanced",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "develop/ethereum-polygon/matic-js/advanced/abi-manager",
+        "develop/ethereum-polygon/matic-js/advanced/plugin",
+        "develop/ethereum-polygon/matic-js/advanced/exit-util",
+      ],
+    },
   ],
 
   contribute: [
@@ -837,21 +826,21 @@ module.exports = {
       label: "Introduction",
       link: {
         type: "doc",
-        id: "miden/intro/main"
+        id: "miden/intro/main",
       },
       collapsed: false,
       items: [
         "miden/intro/overview",
         "miden/intro/usage",
-        "miden/intro/performance"
-      ]
+        "miden/intro/performance",
+      ],
     },
     {
       type: "category",
       label: "User Documentation",
       link: {
         type: "doc",
-        id: "miden/user_docs/main"
+        id: "miden/user_docs/main",
       },
       collapsed: false,
       items: [
@@ -860,7 +849,7 @@ module.exports = {
           label: "Miden Assembly",
           link: {
             type: "doc",
-            id: "miden/user_docs/assembly/main"
+            id: "miden/user_docs/assembly/main",
           },
           items: [
             "miden/user_docs/assembly/code_organization",
@@ -869,30 +858,30 @@ module.exports = {
             "miden/user_docs/assembly/u32_operations",
             "miden/user_docs/assembly/stack_manipulation",
             "miden/user_docs/assembly/io_operations",
-            "miden/user_docs/assembly/cryptographic_operations"
-          ]
+            "miden/user_docs/assembly/cryptographic_operations",
+          ],
         },
         {
           type: "category",
           label: "Miden Standard Library",
           link: {
             type: "doc",
-            id: "miden/user_docs/stdlib/main"
+            id: "miden/user_docs/stdlib/main",
           },
           items: [
             "miden/user_docs/stdlib/crypto/hashes",
             "miden/user_docs/stdlib/math/u64",
-            "miden/user_docs/stdlib/sys"
-          ]
-        }
-      ]
+            "miden/user_docs/stdlib/sys",
+          ],
+        },
+      ],
     },
     {
       type: "category",
       label: "Design",
       link: {
         type: "doc",
-        id : "miden/design/main"
+        id: "miden/design/main",
       },
       collapsed: false,
       items: [
@@ -902,19 +891,16 @@ module.exports = {
           label: "Program decoder",
           link: {
             type: "doc",
-            id: "miden/design/decoder/main"
+            id: "miden/design/decoder/main",
           },
-          items: [
-            "miden/design/decoder/constraints"
-          ]
-
+          items: ["miden/design/decoder/constraints"],
         },
         {
           type: "category",
           label: "Operand stack",
           link: {
             type: "doc",
-            id: "miden/design/stack/main"
+            id: "miden/design/stack/main",
           },
           items: [
             "miden/design/stack/op_constraints",
@@ -923,8 +909,8 @@ module.exports = {
             "miden/design/stack/u32_ops",
             "miden/design/stack/stack_ops",
             "miden/design/stack/io_ops",
-            "miden/design/stack/crypto_ops"
-          ]
+            "miden/design/stack/crypto_ops",
+          ],
         },
         "miden/design/range",
         {
@@ -932,18 +918,18 @@ module.exports = {
           label: "Chiplets",
           link: {
             type: "doc",
-            id: "miden/design/chiplets/main"
+            id: "miden/design/chiplets/main",
           },
           items: [
             "miden/design/chiplets/hasher",
             "miden/design/chiplets/bitwise",
-            "miden/design/chiplets/memory"
-          ]
+            "miden/design/chiplets/memory",
+          ],
         },
-        "miden/design/multiset"
-      ]
+        "miden/design/multiset",
+      ],
     },
-    "miden/background"
+    "miden/background",
   ],
 
   zkEVM: [
@@ -953,10 +939,10 @@ module.exports = {
       type: "category",
       label: "zkEVM Protocol",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items:[
+      items: [
         "zkEVM/protocol/protocol-components",
         "zkEVM/protocol/state-management",
         "zkEVM/protocol/consensus",
@@ -965,66 +951,66 @@ module.exports = {
         "zkEVM/protocol/upgradability",
         "zkEVM/protocol/admin-role",
         {
-              type: "category",
-              label: "Malfunction Resistance",
-              link: {
-                type: "generated-index"
-              },
-              items:[
-                "zkEVM/protocol/sequencer-resistance",
-                "zkEVM/protocol/aggregator-resistance",
-                "zkEVM/protocol/emergency-state",
-              ]
+          type: "category",
+          label: "Malfunction Resistance",
+          link: {
+            type: "generated-index",
+          },
+          items: [
+            "zkEVM/protocol/sequencer-resistance",
+            "zkEVM/protocol/aggregator-resistance",
+            "zkEVM/protocol/emergency-state",
+          ],
         },
         "zkEVM/lx-ly-bridge",
-      ]
+      ],
     },
     "zkEVM/zknode/zknode-overview",
     {
       type: "category",
       label: "zkProver",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items:[
+      items: [
         "zkEVM/zkProver/overview",
         "zkEVM/zkProver/zkprover-design",
         {
           type: "category",
           label: "mFibonacci SM",
           link: {
-            type: "generated-index"
+            type: "generated-index",
           },
-          items:[
+          items: [
             "zkEVM/zkProver/mfibonacci-overview",
             "zkEVM/zkProver/mfibonacci-example",
             "zkEVM/zkProver/commitment-scheme",
             "zkEVM/zkProver/verification-scheme",
             "zkEVM/zkProver/pil-stark",
             "zkEVM/zkProver/pil-stark-demo",
-          ]
+          ],
         },
         {
           type: "category",
           label: "Generic SM",
           link: {
-            type: "generated-index"
+            type: "generated-index",
           },
-          items:[
+          items: [
             "zkEVM/zkProver/intro-generic-sm",
             "zkEVM/zkProver/exec-trace-correct",
             "zkEVM/zkProver/ending-program",
-            "zkEVM/zkProver/program-counter"
-          ]
+            "zkEVM/zkProver/program-counter",
+          ],
         },
         {
           type: "category",
           label: "Storage SM",
           link: {
-            type: "generated-index"
+            type: "generated-index",
           },
-          items:[
+          items: [
             "zkEVM/zkProver/intro-storage-sm",
             "zkEVM/zkProver/sparse-merkle-tree",
             "zkEVM/zkProver/simple-smt",
@@ -1033,7 +1019,7 @@ module.exports = {
             "zkEVM/zkProver/construct-key-path",
             "zkEVM/zkProver/storage-sm-mechanism",
             "zkEVM/zkProver/executor-pil",
-          ]
+          ],
         },
         "zkEVM/zkProver/arithmetic-sm",
         "zkEVM/zkProver/memory-sm",
@@ -1042,9 +1028,9 @@ module.exports = {
           type: "category",
           label: "Hashing SM",
           link: {
-            type: "generated-index"
+            type: "generated-index",
           },
-          items:[
+          items: [
             "zkEVM/zkProver/intro-hashing-sm",
             "zkEVM/zkProver/keccak-framework",
             "zkEVM/zkProver/paddingkk-sm",
@@ -1052,54 +1038,54 @@ module.exports = {
             "zkEVM/zkProver/bits2field-sm",
             "zkEVM/zkProver/keccakf-sm",
             "zkEVM/zkProver/poseidon-sm",
-          ]
+          ],
         },
-      ]
+      ],
     },
     {
       type: "category",
       label: "How To Guides",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items:[
+      items: [
         "zkEVM/develop",
         "zkEVM/setup-local-node",
         "zkEVM/setup-production-node",
-      ]
+      ],
     },
     {
       type: "category",
       label: "zk Assembly",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items:[
+      items: [
         "zkEVM/zkASM/introduction",
         "zkEVM/zkASM/basic-syntax",
-        "zkEVM/zkASM/some-examples"
-      ]
+        "zkEVM/zkASM/some-examples",
+      ],
     },
     {
       type: "category",
       label: "Polynomial Identity Language",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items:[
+      items: [
         "zkEVM/PIL/introduction",
         "zkEVM/PIL/hello-world-examples",
         "zkEVM/PIL/components",
         "zkEVM/PIL/cyclical-nature",
         "zkEVM/PIL/modularity",
         "zkEVM/PIL/advanced-features",
-      ]
+      ],
     },
     "zkEVM/open-source-repos",
-    "zkEVM/glossary"
+    "zkEVM/glossary",
   ],
 
   faq: [
@@ -1111,13 +1097,12 @@ module.exports = {
     "faq/validator-faq",
     "faq/staking-faq",
     "faq/wallet-bridge-faq",
-    "faq/consensys-framework"
+    "faq/consensys-framework",
   ],
 
-// #####################################################################
+  // #####################################################################
 
   edge: [
-
     "edge/overview",
     {
       type: "category",
@@ -1134,8 +1119,7 @@ module.exports = {
           link: {
             type: "generated-index",
           },
-          items: [
-          ],
+          items: [],
         },
         {
           type: "category",
@@ -1149,16 +1133,15 @@ module.exports = {
             "edge/consensus/pos-stake-unstake",
             "edge/consensus/migration-to-pos",
             "edge/consensus/bls",
-            ],
-          },
+          ],
+        },
         {
           type: "category",
           label: "Block production",
           link: {
             type: "generated-index",
           },
-          items: [
-          ],
+          items: [],
         },
         {
           type: "category",
@@ -1166,8 +1149,7 @@ module.exports = {
           link: {
             type: "generated-index",
           },
-          items: [
-          ],
+          items: [],
         },
         {
           type: "category",
@@ -1175,8 +1157,7 @@ module.exports = {
           link: {
             type: "generated-index",
           },
-          items: [
-          ],
+          items: [],
         },
         {
           type: "category",
@@ -1285,9 +1266,7 @@ module.exports = {
           link: {
             type: "generated-index",
           },
-          items: [
-            "edge/validator-hosting",
-          ],
+          items: ["edge/validator-hosting"],
         },
         {
           type: "category",
@@ -1361,18 +1340,16 @@ module.exports = {
       type: "category",
       label: "Issuer",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items: [
-        "polygonid/issuer/issuer-overview"
-      ]
+      items: ["polygonid/issuer/issuer-overview"],
     },
     {
       type: "category",
       label: "Verifier",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
       items: [
@@ -1380,62 +1357,56 @@ module.exports = {
         {
           type: "category",
           label: "Off-chain verification",
-          link:{
-            type: "generated-index"
+          link: {
+            type: "generated-index",
           },
           items: [
             "polygonid/verifier/verification-library/verifier-library-intro",
             {
               type: "category",
               label: "APIs",
-              link:{
-                type: "generated-index"
+              link: {
+                type: "generated-index",
               },
               items: [
                 "polygonid/verifier/verification-library/config",
                 "polygonid/verifier/verification-library/request-api-guide",
                 "polygonid/verifier/verification-library/verification-api-guide",
                 "polygonid/verifier/verification-library/zk-query-language",
-                "polygonid/verifier/verification-library/jwz"
-              ]
+                "polygonid/verifier/verification-library/jwz",
+              ],
             },
-            "polygonid/verifier/verification-library/verifier-set-up"
-          ]
+            "polygonid/verifier/verification-library/verifier-set-up",
+          ],
         },
         {
           type: "category",
           label: "On-chain verification",
           link: {
-            type: "generated-index"
+            type: "generated-index",
           },
-          items: [
-            "polygonid/verifier/on-chain-verification/overview"
-          ]
-        }
-      ]
+          items: ["polygonid/verifier/on-chain-verification/overview"],
+        },
+      ],
     },
     {
       type: "category",
       label: "Wallet",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items: [
-        "polygonid/wallet/wallet-overview"
-      ]
+      items: ["polygonid/wallet/wallet-overview"],
     },
     {
       type: "category",
       label: "Smart Contracts",
       link: {
-        type: "generated-index"
+        type: "generated-index",
       },
       collapsed: false,
-      items: [
-        "polygonid/contracts/overview"
-      ]
-    }
+      items: ["polygonid/contracts/overview"],
+    },
   ],
 
   // #####################################################################
@@ -1490,5 +1461,4 @@ module.exports = {
     },
     "supernets/supernets-faq",
   ],
-
 };
