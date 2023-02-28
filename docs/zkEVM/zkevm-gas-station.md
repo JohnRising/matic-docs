@@ -11,7 +11,7 @@ keywords:
 image: https://wiki.polygon.technology/img/polygon-wiki.png
 ---
 
-The goal of **Polygon zkEVM Gas Station** is to provide dApp developers with gas pricing suggestions so they can use it before sending transactions to the **Polygon zkEVM** network. The prediction method is modelled after the [Polygon Gas Station](polygon-gas-station.md) but is unique in its own ways.
+The goal of **Polygon zkEVM Gas Station** is to provide dApp developers with gas pricing suggestions so they can use it before sending transactions to the **Polygon zkEVM** network. The prediction method is modelled after the [Polygon Gas Station](/develop/tools/polygon-gas-station.md) but is unique in its own ways.
 
 Polygon zkEVM Gas Station is currently **deployed on the Mango testnet of zkEVM**, where it analyzes recent 500 transactions and recommends gas price.
 
@@ -56,5 +56,5 @@ An example JSON response will look like this.
 ```
 
 - {'safelow', 'standard', 'fast', 'fastest'} are gas prices in GWei, you can use these prices before sending transaction off to Polygon zkEVM, depending upon your needs
-- `blockNumber` provides the information of latest block mined when recommendation was made
 - `blockTime`, in seconds, gives average block time of the network.
+- `blockNumber` provides the information of latest block mined when recommendation was made

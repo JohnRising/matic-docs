@@ -188,110 +188,52 @@ To do so, you can use the flag `--block-gas-limit` followed by the desired value
 ```shell
 --block-gas-limit 1000000000
 ```
-
 :::
 
 :::info Set system file descriptor limit
 
-The default file descriptor limit ( maximum number of open files ) on some operating systems is pretty small.
-If the nodes are expected to have high throughput, you might consider increasing this limit on the OS level.
+The default file descriptor limit (maximum number of open files) can be low, and on Linux, everything is a file.
+If the nodes are expected to have high throughput, you might consider increasing this limit.
+Check the official docs of your linux distro for more details.
 
-For Ubuntu distro the procedure is as follows ( if you're not using Ubuntu/Debian distro, check the official docs for your OS ) :
--	Check current os limits ( open files )
-```shell title="ulimit -a"
-ubuntu@ubuntu:~$ ulimit -a
-core file size          (blocks, -c) 0
-data seg size           (kbytes, -d) unlimited
-scheduling priority             (-e) 0
-file size               (blocks, -f) unlimited
-pending signals                 (-i) 15391
-max locked memory       (kbytes, -l) 65536
-max memory size         (kbytes, -m) unlimited
-open files                      (-n) 1024
-pipe size            (512 bytes, -p) 8
-POSIX message queues     (bytes, -q) 819200
-real-time priority              (-r) 0
-stack size              (kbytes, -s) 8192
-cpu time               (seconds, -t) unlimited
-max user processes              (-u) 15391
-virtual memory          (kbytes, -v) unlimited
-file locks                      (-x) unlimited
+#### Check current os limits ( open files )
+```shell title="ulimit -n"
+1024 # Ubuntu default
 ```
 
-- Increase open files limit
-	- Localy - affects only current session:
-	```shell
-	ulimit -u 65535
-	```
-	- Globaly or per user ( add limits at the end of /etc/security/limits.conf file ) :
-	```shell 
-	sudo vi /etc/security/limits.conf  # we use vi, but you can use your favorite text editor
-	```
-	```shell title="/etc/security/limits.conf"
-	# /etc/security/limits.conf
-	#
-	#Each line describes a limit for a user in the form:
-	#
-	#<domain>        <type>  <item>  <value>
-	#
-	#Where:
-	#<domain> can be:
-	#        - a user name
-	#        - a group name, with @group syntax
-	#        - the wildcard *, for default entry
-	#        - the wildcard %, can be also used with %group syntax,
-	#                 for maxlogin limit
-	#        - NOTE: group and wildcard limits are not applied to root.
-	#          To apply a limit to the root user, <domain> must be
-	#          the literal username root.
-	#
-	#<type> can have the two values:
-	#        - "soft" for enforcing the soft limits
-	#        - "hard" for enforcing hard limits
-	#
-	#<item> can be one of the following:
-	#        - core - limits the core file size (KB)
-	#        - data - max data size (KB)
-	#        - fsize - maximum filesize (KB)
-	#        - memlock - max locked-in-memory address space (KB)
-	#        - nofile - max number of open file descriptors
-	#        - rss - max resident set size (KB)
-	#        - stack - max stack size (KB)
-	#        - cpu - max CPU time (MIN)
-	#        - nproc - max number of processes
-	#        - as - address space limit (KB)
-	#        - maxlogins - max number of logins for this user
+#### Increase open files limit
+- Running `polygon-edge` in foreground (shell)
+  ```shell title="Set FD limit for the current session"
+  ulimit -n 65535 # affects only current session, limit won't persist after logging out
+  ```
 
-	#        - maxsyslogins - max number of logins on the system
-	#        - priority - the priority to run user process with
-	#        - locks - max number of file locks the user can hold
-	#        - sigpending - max number of pending signals
-	#        - msgqueue - max memory used by POSIX message queues (bytes)
-	#        - nice - max nice priority allowed to raise to values: [-20, 19]
-	#        - rtprio - max realtime priority
-	#        - chroot - change root to directory (Debian-specific)
-	#
-	#<domain>      <type>  <item>         <value>
-	#
+  ```shell title="Edit /etc/security/limits.conf"
+  # add the following lines to the end of the file to modify FD limits
+  *               soft    nofile          65535 # sets FD soft limit for all users
+  *               hard    nofile          65535 # sets FD hard limit for all users
 
-	#*               soft    core            0
-	#root            hard    core            100000
-	#*               hard    rss             10000
-	#@student        hard    nproc           20
-	#@faculty        soft    nproc           20
-	#@faculty        hard    nproc           50
-	#ftp             hard    nproc           0
-	#ftp             -       chroot          /ftp
-	#@student        -       maxlogins       4
+  # End of file
+  ```
+  Save the file and restart the system.
 
-	*               soft    nofile          65535
-	*               hard    nofile          65535
+- Running `polygon-edge` in the background as a service
 
-	# End of file
-	```
-	Optionaly, modify additional parameters, save the file and restart the system.
-	After restart check file descriptor limit again.
-	It should be set to the value you defined in limits.conf file.
+  If `polygon-edge` is run as a system service, using the tool like `systemd`, file descriptor limits
+  should be managed using `systemd`.
+  ```shell title="Edit /etc/systemd/system/polygon-edge.service"
+  [Service]
+   ...
+  LimitNOFILE=65535
+  ```
+
+### Troubleshooting
+```shell title="Watch FD limits of polygon edge running process"
+watch -n 1 "ls /proc/$(pidof polygon-edge)/fd | wc -l"
+```
+
+```shell title="Check max FD limits for polygon-edge running process"
+cat /proc/$(pidof polygon-edge)/limits
+```
 :::
 
 

@@ -117,3 +117,9 @@ Low gas cost, high TPS, and greater security level coupled with Ethereum composa
 ### Payments
 
 Users interested in transacting with each other in real-time with a near-instantaneous and low-fee environment will appreciate the value **Polygon zkEVM** provides.
+
+## Further Reading
+
+- [Polygon ZK Rollups: Everything You Need to Know](https://www.alchemy.com/overviews/polygon-zk-rollups)
+- [Guide to Using the Polygon zkEVM](https://polygon.technology/blog/your-three-step-guide-to-using-polygon-zkevm-yes-its-that-easy)
+- [Technical Overview of Polygon zkEVM and zkEVM Rollup](https://mirror.xyz/msfew.eth/JJudP_Kf-IS6VhbF-qU0BUor1Ap6SFEb0TzYOHZ34Rc)

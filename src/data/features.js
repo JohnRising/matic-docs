@@ -24,8 +24,8 @@ export const firstRow = [
         description: "Become a Polygon validator by operating a node and participating in consensus."
     },
     {
-        title: "Raise proposals: coming soon",
-        linkUrl: "/docs/maintain/govern/pips",
+        title: "Raise proposals",
+        linkUrl: "/docs/maintain/govern/pips/how-to-propose",
         imageUrl: "img/supernet.svg",
         description: "Learn how to shape the future of Polygon through the new PIP program."
     },

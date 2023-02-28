@@ -108,7 +108,8 @@ Default address: `0.0.0.0:8545`.
   </TabItem>
 </Tabs>
 
-Sets the maximum block range to be considered when executing json-rpc requests that include fromBlock/toBlock values (e.g. eth_getLogs). Default:`1000`.
+Sets the maximum block range to be considered when executing json-rpc requests that include fromBlock/toBlock values (e.g. eth_getLogs).  
+This limit can be completely disabled by setting the value to `0`. Default:`1000`.
 
 ---
 
@@ -127,7 +128,8 @@ Sets the maximum block range to be considered when executing json-rpc requests t
   </TabItem>
 </Tabs>
 
-Sets the maximum length to be considered when handling json-rpc batch requests. Default: `20`.
+Sets the maximum length to be considered when handling json-rpc batch requests.
+This limit can be completely disabled by setting the value to `0`. Default: `20`.
 
 ---
 

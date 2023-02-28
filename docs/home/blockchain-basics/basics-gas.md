@@ -19,3 +19,4 @@ image: https://wiki.polygon.technology/img/polygon-wiki.png
 ### **Resources**
 
 - [What is meant by the term "Gas"?](https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas)
+- [Gas Optimization Strategies](https://www.alchemy.com/overviews/solidity-gas-optimization)

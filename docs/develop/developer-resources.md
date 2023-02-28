@@ -69,6 +69,7 @@ Here are some links that might be useful for new Web3 developers and anyone who 
 ## Additional Resources
 
 - [Video Tutorials Library](https://www.notion.so/Video-Tutorials-Library-f16cbb8c3d9d47d8bc809e06519f110c)
+- [Polygon dApps](https://www.alchemy.com/ecosystem/polygon)
 - [Writings by the Team](https://www.notion.so/Writings-by-the-Team-c979819406894abb964cb50ae197f376)
 - [Matic Tools](https://www.notion.so/f5739c3ed3cc40e3ae71d5935a72143d)
 - [FAQs](https://docs.polygon.technology/docs/faq/technical-faqs)
