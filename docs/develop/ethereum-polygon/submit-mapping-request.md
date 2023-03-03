@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Mapping is necessary in order to transfer your assets to and from Ethereum and Polygon PoS. We offer two bridges to do the same. More details on the bridge can be understood [here](/develop/ethereum-polygon/getting-started.md).
 
-:::tip
+:::info
 
 The Polygon PoS bridge is available for both Polygon Mainnet as well as Mumbai Testnet.
 
@@ -47,9 +47,11 @@ After confirming the transaction from your wallet, you have to wait for the tran
 
 For a successful Mainnet mapping, you may provide your token details [here](https://github.com/maticnetwork/polygon-token-list/issues/new/choose) to be added on the [**Polygon Token List**](https://api-polygon-tokens.polygon.technology/tokenlists/polygonTokens.tokenlist.json).
 
-:::tip
+:::tip Want a Custom Token Mapping?
 
-In case of a [<ins>custom token mapping</ins>](/develop/l1-l2-communication/fx-portal.md#do-i-need-a-custom-fxtunnel-implementation-), you can visit our [**<ins>FxPortal</ins>**](/develop/l1-l2-communication/fx-portal.md) documentation and use the information provided to build your custom FX implementation to map tokens. 
+In case you want to [<ins>customize your token mapping</ins>](/develop/l1-l2-communication/fx-portal.md#do-i-need-a-custom-fxtunnel-implementation-), you can visit our [**<ins>FxPortal</ins>**](/develop/l1-l2-communication/fx-portal.md) documentation and use the information provided to build your FxTunnel implementation and map tokens.
+
+While using the **default FxPortal** tunnels, you can't modify the child contract code. In case you need a **custom child token**, you must go for your own **custom FxTunnel**.
 
 :::
 

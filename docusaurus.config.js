@@ -733,7 +733,7 @@ module.exports = {
               "rel": null
             },
             {
-              "href": "https://www.quicknode.com/chains/polygon",
+              "href": "https://www.quicknode.com/chains/matic",
               "label": "QuickNode",
               "target": "_blank",
               "rel": null

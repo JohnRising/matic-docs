@@ -415,7 +415,7 @@ To configure your MetaMask to use your custom zkEVM network, follow these steps:
 5. Fill up the L2 network information
     * **Network Name:** Polygon zkEVM - Goerli
     * **New RPC URL:** <http://IP-and-Port-of-zkEVM-Node-Instance>
-    * **Chain ID:** 1422
+    * **Chain ID:** 1442
     * **Currency Symbol:** ETH
     * **Block Explorer URL:** <http://IP-and-Port-of-Explorer-Instance>
 6. Click on **Save** and close the Settings

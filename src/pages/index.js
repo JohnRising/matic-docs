@@ -127,7 +127,7 @@ function Home() {
           <section className="section container-fluid">
             <div className="row justify-content-center">
               <div className="col-lg-8">
-                <h1 className="mt-0">the <a href="https://polygon.technology" class="landing-page-link">polygon</a> wiki</h1>
+                <h1 className="mt-0"><a href="https://polygon.technology" class="landing-page-link">polygon</a> wiki</h1>
                 <h3 className="mt-0"> The official documentation for <a href="https://polygon.technology" class="landing-page-link">0xPolygon</a></h3>
                 <p className="lead">The <b>Polygon Wiki</b> is the source of truth for Polygon, providing comprehensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building on Polygon.</p>
                 <a href="docs/home/new-to-polygon/" style={{ color: '#ffffff' }}>

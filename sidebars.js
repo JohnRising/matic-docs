@@ -55,7 +55,7 @@ module.exports = {
   govern: [
     {
       type: "category",
-      label: "PIPs",
+      label: "Polygon Improvement Proposals (PIPs)",
       link: {
         type: "generated-index",
       },
@@ -960,7 +960,6 @@ module.exports = {
       items: [
         "zkEVM/protocol/protocol-components",
         "zkEVM/protocol/state-management",
-        "zkEVM/protocol/consensus",
         {
               type: "category",
               label: "Transaction Life Cycle",
@@ -990,8 +989,20 @@ module.exports = {
             "zkEVM/protocol/emergency-state",
           ],
         },
-        "zkEVM/lx-ly-bridge",
-      ],
+        {
+              type: "category",
+              label: "zkEVM Bridge",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+               "zkEVM/protocol/zkevm-bridge",
+               "zkEVM/protocol/exit-tree",
+               "zkEVM/protocol/bridge-smart-contract",
+               "zkEVM/protocol/flow-of-asset",
+              ]
+        },
+      ]
     },
     "zkEVM/zknode/zknode-overview",
     {
@@ -1017,34 +1028,43 @@ module.exports = {
       collapsed: false,
       items: [
         "zkEVM/zkProver/overview",
-        "zkEVM/zkProver/zkprover-design",
         {
           type: "category",
-          label: "mFibonacci SM",
+          label: "Basic Concepts",
           link: {
             type: "generated-index",
           },
-          items: [
-            "zkEVM/zkProver/mfibonacci-overview",
-            "zkEVM/zkProver/mfibonacci-example",
-            "zkEVM/zkProver/commitment-scheme",
-            "zkEVM/zkProver/verification-scheme",
-            "zkEVM/zkProver/pil-stark",
-            "zkEVM/zkProver/pil-stark-demo",
-          ],
-        },
-        {
-          type: "category",
-          label: "Generic SM",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "zkEVM/zkProver/intro-generic-sm",
-            "zkEVM/zkProver/exec-trace-correct",
-            "zkEVM/zkProver/ending-program",
-            "zkEVM/zkProver/program-counter",
-          ],
+          items:[
+            "zkEVM/zkProver/zkprover-design",
+            {
+              type: "category",
+              label: "mFibonacci SM",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/zkProver/mfibonacci-overview",
+                "zkEVM/zkProver/mfibonacci-example",
+                "zkEVM/zkProver/commitment-scheme",
+                "zkEVM/zkProver/verification-scheme",
+                "zkEVM/zkProver/pil-stark",
+                "zkEVM/zkProver/pil-stark-demo",
+              ]
+            },
+            {
+              type: "category",
+              label: "Generic SM",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/zkProver/intro-generic-sm",
+                "zkEVM/zkProver/exec-trace-correct",
+                "zkEVM/zkProver/ending-program",
+                "zkEVM/zkProver/program-counter"
+              ]
+            },
+          ]
         },
         {
           type: "category",

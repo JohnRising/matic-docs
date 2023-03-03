@@ -80,16 +80,12 @@ A list of the changeable parameters by the Heimdall governance module is availab
 
 ### Polygon Improvement Proposal (PIP)
 
-The PIP process, as defined in PIP-1, outlined a preliminary approach for allowing the community
+The PIP process, as defined in [PIP-1](https://forum.polygon.technology/t/pip-1-pip-purpose-and-guidelines/11356), outlined a preliminary approach for allowing the community
 to put forward-protocol upgrades that improve the network.
 
 This takes inspiration from the [PEP process](https://peps.python.org/pep-0001/), which has become a standard used for open source
-projects, including Ethereum and Bitcoin.
+projects, including [Ethereum](https://forum.polygon.technology/t/pip-1-pip-purpose-and-guidelines/11356) and [Bitcoin](https://github.com/bitcoin/bips).
 
-Due to the permissionless nature of governance on the Polygon PoS chain, ⅔+1 of the total stake can
-change the network by simply updating their node software. This fact is also actual
-for the Ethereum Beacon chain. However, no change is considered for inclusion unless a proposal
-passes through the right track.
+As a guiding rule, it is recommended that all changes originate from the [Polygon community Forum](https://forum.polygon.technology/) and the [PIP Github repository](https://github.com/maticnetwork/Polygon-Improvement-Proposals), in the form of a proposal written in line with PIP-1.
 
-As a guiding rule, it is recommended that all changes originate from the Polygon community forum
-in the form of a proposal written in line with PIP-1.
+On the Polygon PoS chain, different classifications of PIPs have different implementation flows. Thus, it is suggested to consult with the Governance processes board regarding the implementation of different types of PIPs. 

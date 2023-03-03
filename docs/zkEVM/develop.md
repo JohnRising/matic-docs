@@ -35,7 +35,7 @@ In order to add the **Polygon zkEVM** network to your wallet, you will need to e
 
 - **Network Name**: Polygon zkEVM Testnet
 - **RPC URL**: [https://rpc.public.zkevm-test.net](https://rpc.public.zkevm-test.net)
-- **Chain ID**: 1422
+- **Chain ID**: 1442
 - **Currency Symbol**: ETH
 - **Block Explorer URL**: [https://explorer.public.zkevm-test.net](https://explorer.public.zkevm-test.net)
 

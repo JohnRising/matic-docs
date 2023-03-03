@@ -36,8 +36,8 @@ Wiki from the outset.
 
 ### Requirements
 
-* Install [Node.js](https://nodejs.org/en/download/) version >= 12.13
-* Install [Yarn](https://yarnpkg.com/getting-started/install) version >= 1.5  
+* Install [Node.js](https://nodejs.org/en/download/) version >= 16.14.1
+* Install [Yarn](https://yarnpkg.com/getting-started/install) version >= 1.22  
 
 > Note that on macOS you also need Xcode and Command Line Tools.
 
@@ -187,3 +187,15 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 ```
 GIT_USER=[your_github_handle] USE_SSH=true yarn deploy
 ```
+
+### Caching
+
+Deployments leverage GitHub caching to improve build times. Currently, 3 levels of caching are 
+implemented:
+
+- `.docusaurus`: caches the site structure. The build process will update this as needed
+- `build`: caches the static assets to avoid regenerating any pages that have not changed
+- `node_modules`: caches node_modules based on the hash of `yarn.lock`. Any changes to package dependencies will invalidate and rebuild this cache
+
+Current cache config is defined in [build.yml](.github/workflows/build.yml#22). Caches can be viewed or invalidated in the 
+GitHub repo settings.

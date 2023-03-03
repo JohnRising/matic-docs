@@ -65,6 +65,11 @@ Bor is Polygon block producer layer - the entity responsible for aggregating tra
 
 Block producers are periodically shuffled via committee selection on Heimdall in durations termed as a `span` in Polygon. Blocks are produced at the **Bor** node and the sidechain VM is EVM-compatible. Blocks produced on Bor are also validated periodically by Heimdall nodes, and a checkpoint consisting of the Merkle tree hash of a set of blocks on Bor is committed to Ethereum periodically.
 
+### Further Reading
+
+- [Building with Polygon Node Provider](https://www.alchemy.com/overviews/polygon-node)
+- [Deep Dive into Polygon Architecture](https://101blockchains.com/polygon-architecture/)
+
 ### Resources
 
 - [Bor Architecture](https://forum.polygon.technology/t/matic-system-overview-bor/9123)

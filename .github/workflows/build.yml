@@ -9,15 +9,42 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-8-cores
 
     steps:
       # Checkout the code
       - uses: actions/checkout@v2
       # Setup node with version 12.x and NPM registry url
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: "16.14.1"
+          cache: 'npm'
+      # Cache Docusaurus artifacts for faster build times
+      - name: Cache Docusaurus artifacts
+        id: cache-docusaurus
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-build-docusaurus
+          path: |
+            .docusaurus
+            build
+      - if: ${{ steps.cache-docusaurus.outputs.cache-hit != 'true' }}
+        name: State of Docusaurus cache
+        continue-on-error: true
+        run: echo "Docusaurus cache miss, resulting build will be slower"
+      # Cache node_modules for faster build times
+      - name: Cache node_modules
+        id: cache-node-modules
+        env:
+          cache-name: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          path: node_modules
+      - if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
+        name: State of node_modules cache
+        continue-on-error: true
+        run: echo "Package dependencies changed, unable to use node_modules cache"
       # Run npm install to install project packages
       - run: yarn install --frozen-lockfile
       # npm run build to build the project

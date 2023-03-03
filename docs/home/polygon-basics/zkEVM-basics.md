@@ -14,7 +14,11 @@ keywords:
 image: https://wiki.polygon.technology/img/polygon-wiki.png
 ---
 
-# What is Polygon zkEVM
+:::info
+
+For more information about Polygon zkEVM and its architecture, head over to the [<ins>zkEVM protocol documentation</ins>](/zkEVM/introduction.md).
+
+:::
 
 ## Introduction
 Before we dive into what a zkEVM really is, we need to understand each component of this product. A zkEVM is a combination of two powerful technologies: zero knowledge, an ingenious cryptographic solution and an EVM, a distributed state machine that ushered in the development of applications in the blockchain space. 
@@ -58,15 +62,9 @@ The most important reason for building EVM-compatible zkEVMs is to leverage Ethe
 
 # Polygon zkEVM
 
-**Polygon zkEVM** is an open-source ZK-Rollup providing EVM opcode compatibility for a frictionles user experience and the security of Ethereum.
+**Polygon zkEVM** is a source-available ZK-Rollup providing EVM opcode compatibility for a frictionles user experience and the security of Ethereum.
 
 It is the first zero-knowledge scaling solution that is fully equivalent to an EVM. All existing smart contracts, developer toolings and wallets work seamlessly. The zkEVM harnesses the power of ZK proofs to reduce transaction cost and massively increase throughput, all while inheriting the security of Ethereum.
-
-:::info
-
-For more information about Polygon zkEVM and its architecture, head over to the [<ins>zkEVM product documentation</ins>](/docs/zkEVM/overview).
-
-:::
 
 ## Benefits of Polygon zkEVM
 

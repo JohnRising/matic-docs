@@ -19,7 +19,7 @@ image: https://wiki.polygon.technology/img/thumbnail/polygon-zkevm.png
 ---
 
 ## Overview
-This section is devoted to explain the basic syntax of zkASM from a high-level perspective. Advanced syntax is totally dependendant on the use case (e.g. the design of a zkEVM) and will be explained in more detail with more complete examples later on.
+This section is devoted to explain the basic syntax of zkASM from a high-level perspective. Advanced syntax is totally dependant on the use case (e.g. the design of a zkEVM) and will be explained in more detail with more complete examples later on.
 
 :::info
 
@@ -34,7 +34,7 @@ Instructions are depicted line by line and are divided in two parts. The left-si
 Comments are made with the semicolon "$;$" symbol.
 
 ```
-; This a totally useful comment
+; This is a totally useful comment
 ```
 
 At this moment, only one-line comments are available.
@@ -73,8 +73,8 @@ There are many ways in which values can be stored into registers:
 
         ${ExecutorMethod(params)} => A,B
 
-        Notice that the method `ExecutorMethod` does not necessarily depends on the registers.
-        A good example of such a method is `SHA256`.
+        ; Notice that the method `ExecutorMethod` does not necessarily depends on the registers.
+        ; A good example of such a method is `SHA256`.
 
 5. If a method gets executed (with the dollar sign) by its own, its main purpose is generating log information.
 
@@ -95,7 +95,7 @@ To assign the output of a zkEVM Opcode into some register, we use the following 
 $ => A,B    :OPCODE(param)
 ```
 
-A clear example of such situation is while using the memory load opcode:
+A clear example of one such situation is while using the memory load opcode:
 
 ```
 $ => A,B    :MLOAD(param)
@@ -116,13 +116,13 @@ ${ExecutorMethod(params)} => A      :OPCODE1
                                     ...
 ```
 
-When a executor method with a register to store its result gets combined with a jump opcode, it is typically used to handle some unexpected situation, e.g. running out of gas:
+When an executor method with a register to store its result gets combined with a jump opcode, it is typically used to handle some unexpected situation, e.g. running out of gas:
 
 ```
 ${ExecutorMethod(params)} => A :JMP(param)
 ```
 
-It is also common to encounter negative jumps to check appropiate situations, in which carry on forthcoming operations:
+It is also common to encounter negative jumps to check appropriate situations, in which carry on forthcoming operations:
 
 ```
 SP - 2  :JMPN(stackUnderflow)
